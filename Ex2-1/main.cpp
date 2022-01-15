@@ -6,9 +6,9 @@
 
 using namespace std;
 
-#define FILENAME L"C:\\Users\\magshimim\\Desktop\\Magshimim\\AssemblyYear2\\AfterAssembly\\Week12\\MagshimimAfterAssemblyEx12\\MagshimimAfterAssemblyEx12\\gibrish.bin"
+#define FILENAME L"gibrish.bin"
 
-TCHAR szName[] = TEXT("Local\\MoranMapping");
+TCHAR szName[] = TEXT("Local\\YonkaMapping");
 TCHAR szMsg[] = TEXT("");
 
 int main()

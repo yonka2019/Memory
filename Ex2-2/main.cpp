@@ -5,7 +5,7 @@
 #include <iostream>
 
 #define BUF_SIZE 10
-TCHAR szName[] = TEXT("Local\\MoranMapping");
+TCHAR szName[] = TEXT("Local\\YonkaMapping");
 
 int main()
 {
@@ -13,8 +13,8 @@ int main()
     LPCTSTR pBuf;
 
     hMapFile = OpenFileMapping(
-        FILE_MAP_WRITE | FILE_MAP_READ,   // read/write access
-        FALSE,                 // do not inherit the name
+        FILE_MAP_WRITE | FILE_MAP_READ,   // R/W
+        FALSE,
         szName);               // name of mapping object
 
     if (hMapFile == NULL)
@@ -24,8 +24,8 @@ int main()
         return 1;
     }
 
-    PBYTE  mapping = (PBYTE)MapViewOfFile(hMapFile, // handle to map object
-        FILE_MAP_WRITE | FILE_MAP_READ,  // read/write permission
+    PBYTE  mapping = (PBYTE)MapViewOfFile(hMapFile, // handle to map
+        FILE_MAP_WRITE | FILE_MAP_READ,  // R/W
         0,
         0,
         BUF_SIZE);
@@ -49,6 +49,7 @@ int main()
     UnmapViewOfFile(mapping);
 
     CloseHandle(hMapFile);
+    system("pause");
 
     return 0;
 }

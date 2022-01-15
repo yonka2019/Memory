@@ -3,7 +3,7 @@
 using namespace std;
 
 #define SEARCH_LETTER "A"
-#define FILENAME "..\\gibrish.bin"
+#define FILENAME "gibrish.bin"
 
 int CountChar(PCHAR pBuf, int buff_size, LPCSTR letter);
 
@@ -39,6 +39,7 @@ int main()
 
 		count = CountChar(pBuf, mem_buffer_size, letter);
 		cout << "Counter of '" << SEARCH_LETTER << "': " << count << endl;
+
 		buffer_number++;
 		file_location = mem_buffer_size * buffer_number;
 		UnmapViewOfFile(pBuf);
